@@ -1,17 +1,24 @@
 import React from 'react';
-import './AddService.css'
 import { useForm } from "react-hook-form";
+import { useState } from 'react/cjs/react.development';
+import useAuth from '../../hooks/useAuth';
 
+const NewOrder = () => {
+    const { user } = useAuth();
 
-const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
+
+
     const onSubmit = data => {
-        fetch('https://stormy-fjord-21313.herokuapp.com/services', {
+        const orders = data;
+        orders.email = user.email;
+
+        fetch('https://stormy-fjord-21313.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(orders)
         })
             .then(res => res.json())
             .then(result => {
@@ -21,11 +28,10 @@ const AddService = () => {
                 }
             })
     };
-
     return (
         <div style={{ backgroundColor: 'whitesmoke' }}>
             <form className='service-form' onSubmit={handleSubmit(onSubmit)}>
-                <h2 style={{ marginBottom: '20px' }}>Add a New Service</h2>
+                <h2 style={{ marginBottom: '20px' }}>Include Your Order</h2>
                 <input type='url' {...register("image",)} placeholder='Image url' />
                 <input {...register("name",)} placeholder='Service name' />
                 <input type="number" placeholder='Price' />
@@ -36,4 +42,4 @@ const AddService = () => {
     );
 };
 
-export default AddService;
+export default NewOrder;

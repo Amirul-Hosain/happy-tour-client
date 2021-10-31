@@ -1,0 +1,33 @@
+
+.header-container{
+    background-color: whitesmoke;
+    border-bottom: 1px solid rgb(199, 198, 198);
+}
+
+.navbar-links{
+    margin-left: 150px;
+}
+.link{
+    color: rgb(5, 0, 58);
+    margin-left: 7px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0px 8px;
+}
+
+.login-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.login-logout{
+    color: rgb(240, 240, 240);
+    background-color: rgb(54, 54, 78);
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding: 8px 10px;
+}

@@ -1,0 +1,25 @@
+
+
+.add-new-order{
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+    padding: 10px 0px 10px 25px;
+    color: white;
+    font-family: monospace;
+}
+.add-new-order:hover{
+    font-size: 20px;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: #1E90FF;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+.old-orders{
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 15px;
+}
